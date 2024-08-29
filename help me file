@@ -1,0 +1,24 @@
+TITLE
+    chatgpt_context -- Contextual Error Detection and Debugging with AI Assistance.
+
+SYNTAX
+    chatgpt_context KEYOPENAI(string) [VARIABLES(varlist) | ALL] [UPTOERROR]
+
+DESCRIPTION
+    Automatically captures context up to the point of an error in a Stata `.do` file, sends 
+    the context to ChatGPT, and retrieves suggestions for resolving the error. Allows users 
+    to specify which variables' context to include or to use all variables by default.
+
+OPTIONS
+
+    KEYOPENAI(string)
+        Provides the OpenAI API key necessary to access GPT models. This key is required 
+        to run the chatgpt_context command.
+
+    VARIABLES(varlist)
+        Specifies which variables' context (metadata, summary stats) to include in the 
+        query. If not specified, all variables will be included.
+
+    UPTOERROR
+        Automatically detects the most recent error in the Stata log and uploads the context 
+        up to that point to ChatGPT. 
